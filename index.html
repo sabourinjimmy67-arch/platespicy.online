@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platespicy - Authentic American Recipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 text-gray-900 font-sans flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-orange-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-red-600 tracking-wide">Platespicy<span class="text-orange-500">.</span></a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase text-gray-700">
+                <a href="index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="recipes.html" class="hover:text-red-600 transition">Recipes</a>
+                <a href="about.html" class="hover:text-red-600 transition">About</a>
+                <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-red-600 focus:outline-none cursor-pointer">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4 flex flex-col space-y-4 text-sm font-bold uppercase text-gray-700 shadow-md">
+            <a href="index.html" class="hover:text-red-600 transition">Home</a>
+            <a href="recipes.html" class="hover:text-red-600 transition">Recipes</a>
+            <a href="about.html" class="hover:text-red-600 transition">About</a>
+            <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <section class="relative h-[70vh] flex items-center justify-center text-center">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Delicious Burger" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="relative z-10 px-6 max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg">Bold. Classic. <span class="text-orange-400">American.</span></h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 font-medium">Discover the most mouth-watering, spicy, and authentic American recipes right from your kitchen.</p>
+                <a href="recipes.html" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold rounded shadow-lg transition uppercase tracking-wide">
+                    Explore Recipes
+                </a>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 py-20">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-800">Trending Now</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burger" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Spicy Texas BBQ Burger</h3>
+                        <p class="text-gray-600 text-sm mb-4">A towering classic with a fiery BBQ twist and crispy onion rings.</p>
+                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1627962677843-1bc1c2ce22c7" alt="Mac and Cheese" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Buffalo Mac & Cheese</h3>
+                        <p class="text-gray-600 text-sm mb-4">Creamy baked macaroni infused with spicy buffalo sauce and chicken.</p>
+                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91" alt="Fried Chicken" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Nashville Hot Chicken</h3>
+                        <p class="text-gray-600 text-sm mb-4">Crispy, cayenne-spiced fried chicken served with pickles.</p>
+                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-red-600">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div>
+                <h3 class="text-2xl font-extrabold tracking-wide mb-4 text-red-500">Platespicy.</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Your ultimate destination for authentic, mouth-watering American recipes. Bring the classic diner experience home.</p>
+            </div>
+            <div>
+                <h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Explore</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
+                    <li><a href="recipes.html" class="hover:text-red-400 transition">All Recipes</a></li>
+                    <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-red-400 transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Legal</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="privacy.html" class="hover:text-red-400 transition">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-red-400 transition">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 text-xs uppercase tracking-widest pt-8 border-t border-gray-800">
+            &copy; 2026 Platespicy. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

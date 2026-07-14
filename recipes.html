@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Recipes - Platespicy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 text-gray-900 font-sans flex flex-col min-h-screen">
+    <nav class="bg-white border-b border-orange-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-red-600 tracking-wide">Platespicy<span class="text-orange-500">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase text-gray-700">
+                <a href="index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="recipes.html" class="text-red-600 transition">Recipes</a>
+                <a href="about.html" class="hover:text-red-600 transition">About</a>
+                <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-red-600 focus:outline-none cursor-pointer">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4 flex flex-col space-y-4 text-sm font-bold uppercase text-gray-700 shadow-md">
+            <a href="index.html">Home</a>
+            <a href="recipes.html" class="text-red-600">Recipes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl mx-auto px-6 py-16 w-full">
+        
+        <div id="recipe-list-view">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Our Top Recipes</h1>
+                <p class="text-gray-600 max-w-2xl mx-auto">Click on any dish to dive into the full recipe, ingredients, and step-by-step instructions.</p>
+            </div>
+            <div id="recipe-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                </div>
+        </div>
+
+        <div id="recipe-detail-view" class="hidden max-w-4xl mx-auto">
+            <button onclick="closeRecipe()" class="mb-6 text-red-600 font-bold uppercase hover:text-red-800 flex items-center transition">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back to All Recipes
+            </button>
+            <div id="detail-content" class="bg-white rounded-xl shadow-lg border-t-4 border-orange-500 overflow-hidden">
+                </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-red-600 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <div><h3 class="text-2xl font-extrabold tracking-wide mb-4 text-red-500">Platespicy.</h3><p class="text-gray-400 text-sm">Your ultimate destination for authentic, mouth-watering American recipes.</p></div>
+            <div><h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Explore</h3><ul class="space-y-2 text-sm text-gray-400"><li><a href="index.html">Home</a></li><li><a href="recipes.html">All Recipes</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div><h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Legal</h3><ul class="space-y-2 text-sm text-gray-400"><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li></ul></div>
+        </div>
+        <div class="text-center text-gray-500 text-xs uppercase tracking-widest pt-8 border-t border-gray-800">&copy; 2026 Platespicy. All Rights Reserved.</div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => { 
+            document.getElementById('mobile-menu').classList.toggle('hidden'); 
+        });
+
+        // JSON Data for Recipes (Store all content here)
+        const recipesData = [
+            { 
+                id: 1, 
+                title: "Spicy Texas BBQ Burger", 
+                img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd", 
+                desc: "A towering classic with a fiery BBQ twist, crispy onion rings, and pepper jack cheese.",
+                prepTime: "30 Mins",
+                servings: "4 Burgers",
+                ingredients: [
+                    "1 lb Ground Beef (80/20)",
+                    "4 Brioche Buns, toasted",
+                    "4 slices Pepper Jack Cheese",
+                    "1/2 cup Spicy Texas BBQ Sauce",
+                    "Crispy Onion Rings",
+                    "Salt, Pepper, and Smoked Paprika"
+                ],
+                instructions: [
+                    "Form the ground beef into 4 equal patties. Season generously with salt, pepper, and paprika.",
+                    "Heat a grill or cast-iron skillet over medium-high heat. Cook patties for 4-5 minutes per side for medium doneness.",
+                    "Add pepper jack cheese during the last minute of cooking to melt.",
+                    "Assemble the burgers: Place patty on the toasted bun, drizzle heavily with BBQ sauce, and top with crispy onion rings."
+                ]
+            },
+            { 
+                id: 2, 
+                title: "Buffalo Mac & Cheese", 
+                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qfwqDoxGOS61_gZsrdv0GMjvaI2WsTkvPFIge6WHPQ&s=10", 
+                desc: "Creamy baked macaroni infused with spicy buffalo sauce and topped with crispy chicken chunks.",
+                prepTime: "45 Mins",
+                servings: "6 Portions",
+                ingredients: [
+                    "1 lb Macaroni Pasta",
+                    "3 cups Cheddar & Monterey Jack cheese, shredded",
+                    "1/2 cup Buffalo Sauce (like Frank's RedHot)",
+                    "2 cups Cooked Crispy Chicken, chopped",
+                    "2 cups Milk & 1/4 cup Butter",
+                    "Breadcrumbs for topping"
+                ],
+                instructions: [
+                    "Boil macaroni according to package instructions. Drain and set aside.",
+                    "In a saucepan, melt butter and whisk in a tablespoon of flour. Gradually add milk to create a smooth sauce.",
+                    "Stir in shredded cheese until melted, then mix in the buffalo sauce.",
+                    "Combine the cheese sauce, pasta, and chopped chicken. Pour into a baking dish, top with breadcrumbs, and bake at 375°F (190°C) for 20 minutes."
+                ]
+            },
+            { 
+                id: 3, 
+                title: "Nashville Hot Chicken", 
+                img: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91", 
+                desc: "Crispy, cayenne-spiced fried chicken served classic style over white bread with pickles.",
+                prepTime: "60 Mins",
+                servings: "4 Portions",
+                ingredients: [
+                    "1 whole Chicken, cut into pieces",
+                    "2 cups Buttermilk",
+                    "2 cups All-Purpose Flour",
+                    "3 tbsp Cayenne Pepper",
+                    "1 tbsp Brown Sugar & 1 tsp Garlic Powder",
+                    "Pickles and White Bread for serving"
+                ],
+                instructions: [
+                    "Marinate chicken pieces in buttermilk for at least 4 hours.",
+                    "Dredge chicken in flour mixed with a pinch of salt and pepper. Fry in hot oil (325°F) until golden brown and cooked through.",
+                    "In a bowl, mix cayenne pepper, brown sugar, garlic powder, and 1/2 cup of the hot frying oil to create the spicy paste.",
+                    "Brush the fried chicken heavily with the spicy oil mixture. Serve immediately over white bread with pickles."
+                ]
+            },
+            { 
+                id: 4, 
+                title: "BBQ Pork Ribs", 
+                img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd", 
+                desc: "Fall-off-the-bone tender pork ribs, slow-cooked and glazed with a sweet and smoky sauce.",
+                prepTime: "3.5 Hours",
+                servings: "4 Portions",
+                ingredients: [
+                    "2 racks Baby Back Pork Ribs",
+                    "1/4 cup Brown Sugar",
+                    "2 tbsp Smoked Paprika & 1 tbsp Chili Powder",
+                    "1 cup Classic American BBQ Sauce",
+                    "Salt and Black Pepper"
+                ],
+                instructions: [
+                    "Remove the membrane from the back of the ribs. Rub generously with brown sugar, paprika, chili powder, salt, and pepper.",
+                    "Wrap the ribs tightly in aluminum foil and bake at 275°F (135°C) for about 3 hours until very tender.",
+                    "Remove from foil, brush generously with BBQ sauce.",
+                    "Broil on high for 3-5 minutes until the sauce becomes sticky and caramelized."
+                ]
+            }
+        ];
+
+        const gridContainer = document.getElementById('recipe-grid');
+        const listView = document.getElementById('recipe-list-view');
+        const detailView = document.getElementById('recipe-detail-view');
+        const detailContent = document.getElementById('detail-content');
+
+        // Render the Grid
+        function renderGrid() {
+            gridContainer.innerHTML = '';
+            recipesData.forEach(recipe => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-lg shadow-md overflow-hidden group cursor-pointer border border-orange-100 hover:shadow-xl transition transform hover:-translate-y-1";
+                card.onclick = () => openRecipe(recipe.id);
+                card.innerHTML = `
+                    <img src="${recipe.img}" alt="${recipe.title}" class="w-full h-56 object-cover group-hover:opacity-90 transition duration-300">
+                    <div class="p-5 text-center">
+                        <h3 class="font-extrabold text-gray-900 text-xl mb-2">${recipe.title}</h3>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">${recipe.desc}</p>
+                        <span class="text-sm font-bold text-red-500 uppercase tracking-wide">View Recipe &rarr;</span>
+                    </div>
+                `;
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Open Single Recipe
+        function openRecipe(id) {
+            const recipe = recipesData.find(r => r.id === id);
+            if (!recipe) return;
+
+            // Generate Ingredients List
+            let ingredientsHTML = '<ul class="list-disc pl-5 space-y-2 text-gray-700">';
+            recipe.ingredients.forEach(ing => { ingredientsHTML += `<li>${ing}</li>`; });
+            ingredientsHTML += '</ul>';
+
+            // Generate Instructions List
+            let instructionsHTML = '<ol class="list-decimal pl-5 space-y-4 text-gray-700">';
+            recipe.instructions.forEach(step => { instructionsHTML += `<li>${step}</li>`; });
+            instructionsHTML += '</ol>';
+
+            // Inject Content
+            detailContent.innerHTML = `
+                <img src="${recipe.img}" alt="${recipe.title}" class="w-full h-80 object-cover">
+                <div class="p-8">
+                    <h1 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">${recipe.title}</h1>
+                    <div class="flex space-x-6 text-sm font-bold text-orange-600 uppercase tracking-wide mb-8 border-b pb-6">
+                        <span>🕒 Prep: ${recipe.prepTime}</span>
+                        <span>🍽️ Yield: ${recipe.servings}</span>
+                    </div>
+                    
+                    <p class="text-lg text-gray-600 italic mb-8">${recipe.desc}</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div class="md:col-span-1 bg-orange-50 p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 border-b border-orange-200 pb-2">Ingredients</h3>
+                            ${ingredientsHTML}
+                        </div>
+                        <div class="md:col-span-2">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 border-b border-gray-200 pb-2">Instructions</h3>
+                            ${instructionsHTML}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Toggle Views
+            listView.classList.add('hidden');
+            detailView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close Recipe and Return to Grid
+        function closeRecipe() {
+            detailView.classList.add('hidden');
+            listView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize the page
+        renderGrid();
+    </script>
+</body>
+</html>
