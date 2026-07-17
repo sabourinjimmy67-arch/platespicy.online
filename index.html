@@ -13,7 +13,7 @@
             <a href="index.html" class="text-3xl font-extrabold text-red-600 tracking-wide">Platespicy<span class="text-orange-500">.</span></a>
             
             <div class="hidden md:flex space-x-8 text-sm font-bold uppercase text-gray-700">
-                <a href="index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="index.html" class="text-red-600 transition">Home</a>
                 <a href="recipes.html" class="hover:text-red-600 transition">Recipes</a>
                 <a href="about.html" class="hover:text-red-600 transition">About</a>
                 <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
@@ -26,7 +26,7 @@
             </button>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-100 px-6 py-4 flex flex-col space-y-4 text-sm font-bold uppercase text-gray-700 shadow-md">
-            <a href="index.html" class="hover:text-red-600 transition">Home</a>
+            <a href="index.html" class="text-red-600 transition">Home</a>
             <a href="recipes.html" class="hover:text-red-600 transition">Recipes</a>
             <a href="about.html" class="hover:text-red-600 transition">About</a>
             <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
@@ -34,60 +34,136 @@
     </nav>
 
     <main class="flex-grow">
-        <section class="relative h-[70vh] flex items-center justify-center text-center">
+        
+        <section class="relative h-[80vh] flex items-center justify-center text-center">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Delicious Burger" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="absolute inset-0 bg-black opacity-60"></div>
             </div>
-            <div class="relative z-10 px-6 max-w-3xl">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg">Bold. Classic. <span class="text-orange-400">American.</span></h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 font-medium">Discover the most mouth-watering, spicy, and authentic American recipes right from your kitchen.</p>
-                <a href="recipes.html" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold rounded shadow-lg transition uppercase tracking-wide">
+            <div class="relative z-10 px-6 max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 drop-shadow-lg tracking-tight">Bold. Classic. <span class="text-orange-400">American.</span></h1>
+                <p class="text-lg md:text-2xl text-gray-200 mb-10 font-medium max-w-2xl mx-auto">Discover the most mouth-watering, spicy, and authentic American recipes right from your kitchen.</p>
+                <a href="recipes.html" class="bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-bold rounded-full shadow-xl transition-all duration-300 uppercase tracking-widest text-sm transform hover:scale-105 inline-block">
                     Explore Recipes
                 </a>
             </div>
         </section>
 
         <section class="max-w-7xl mx-auto px-6 py-20">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-800">Trending Now</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burger" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Spicy Texas BBQ Burger</h3>
-                        <p class="text-gray-600 text-sm mb-4">A towering classic with a fiery BBQ twist and crispy onion rings.</p>
-                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-800">Crave by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="recipes.html" class="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer h-48 md:h-64">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burgers" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-6">
+                        <h3 class="text-white text-xl font-bold uppercase tracking-wide">Burgers</h3>
                     </div>
+                </a>
+                <a href="recipes.html" class="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer h-48 md:h-64">
+                    <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd" alt="BBQ" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-6">
+                        <h3 class="text-white text-xl font-bold uppercase tracking-wide">BBQ Grill</h3>
+                    </div>
+                </a>
+                <a href="recipes.html" class="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer h-48 md:h-64">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4mLLNZoEYujxgWLpFr1R2cCfPa3J0Ihr_Yn6bGWgj5g&s=10" alt="Comfort Food" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-6">
+                        <h3 class="text-white text-xl font-bold uppercase tracking-wide">Comfort</h3>
+                    </div>
+                </a>
+                <a href="recipes.html" class="relative group rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer h-48 md:h-64">
+                    <img src="https://images.unsplash.com/photo-1621236378699-8597faf6a176" alt="Desserts" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center pb-6">
+                        <h3 class="text-white text-xl font-bold uppercase tracking-wide">Desserts</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-white py-20 border-y border-orange-100">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b" alt="Cooking American Food" class="rounded-2xl shadow-xl w-full h-96 object-cover border-4 border-orange-50">
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1627962677843-1bc1c2ce22c7" alt="Mac and Cheese" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Buffalo Mac & Cheese</h3>
-                        <p class="text-gray-600 text-sm mb-4">Creamy baked macaroni infused with spicy buffalo sauce and chicken.</p>
-                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91" alt="Fried Chicken" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Nashville Hot Chicken</h3>
-                        <p class="text-gray-600 text-sm mb-4">Crispy, cayenne-spiced fried chicken served with pickles.</p>
-                        <button class="text-red-600 font-bold uppercase text-sm cursor-not-allowed">View Recipe &rarr;</button>
-                    </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Why Platespicy?</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        We don't just share recipes; we share the soul of American diners, Southern BBQ pits, and East Coast street food. Every recipe is meticulously tested to bring that authentic, bold, and spicy kick straight to your dining table.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-700 font-bold"><span class="text-red-500 mr-3 text-xl">🔥</span> 100% Authentic American Flavors</li>
+                        <li class="flex items-center text-gray-700 font-bold"><span class="text-red-500 mr-3 text-xl">🥩</span> Easy Step-by-Step Instructions</li>
+                        <li class="flex items-center text-gray-700 font-bold"><span class="text-red-500 mr-3 text-xl">🌶️</span> The Perfect Spice Balance</li>
+                    </ul>
+                    <a href="about.html" class="text-red-600 font-bold uppercase tracking-widest border-b-2 border-red-600 pb-1 hover:text-red-800 transition">Read Our Story &rarr;</a>
                 </div>
             </div>
         </section>
+
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-2">Trending Now</h2>
+                    <p class="text-gray-500">The most loved recipes by our community this week.</p>
+                </div>
+                <a href="recipes.html" class="hidden md:block text-orange-600 font-bold uppercase text-sm tracking-wide hover:text-orange-800">View All Recipes</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group border border-orange-50 relative">
+                    <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">Hot</div>
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd" alt="Burger" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-8">
+                        <h3 class="text-xl font-extrabold text-gray-900 mb-2">Spicy Texas BBQ Burger</h3>
+                        <p class="text-gray-600 text-sm mb-6">A towering classic with a fiery BBQ twist and crispy onion rings.</p>
+                        <a href="recipes.html" class="text-red-600 font-bold uppercase text-sm tracking-wide hover:text-red-800">Cook This &rarr;</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group border border-orange-50">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1qfwqDoxGOS61_gZsrdv0GMjvaI2WsTkvPFIge6WHPQ&s=10" alt="Mac and Cheese" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-8">
+                        <h3 class="text-xl font-extrabold text-gray-900 mb-2">Buffalo Mac & Cheese</h3>
+                        <p class="text-gray-600 text-sm mb-6">Creamy baked macaroni infused with spicy buffalo sauce and chicken.</p>
+                        <a href="recipes.html" class="text-red-600 font-bold uppercase text-sm tracking-wide hover:text-red-800">Cook This &rarr;</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group border border-orange-50">
+                    <img src="https://images.unsplash.com/photo-1610057099443-fde8c4d50f91" alt="Fried Chicken" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-8">
+                        <h3 class="text-xl font-extrabold text-gray-900 mb-2">Nashville Hot Chicken</h3>
+                        <p class="text-gray-600 text-sm mb-6">Crispy, cayenne-spiced fried chicken served classic style with pickles.</p>
+                        <a href="recipes.html" class="text-red-600 font-bold uppercase text-sm tracking-wide hover:text-red-800">Cook This &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center md:hidden">
+                <a href="recipes.html" class="text-orange-600 font-bold uppercase text-sm tracking-wide">View All Recipes &rarr;</a>
+            </div>
+        </section>
+
+        <section class="bg-red-600 py-20 text-center">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Never Miss a Recipe!</h2>
+                <p class="text-red-100 mb-8 text-lg">Join our community of food lovers and get the best American recipes delivered straight to your inbox.</p>
+                <form class="flex flex-col md:flex-row justify-center gap-4" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Enter your email address" class="px-6 py-4 w-full md:w-96 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-orange-400 font-medium" disabled>
+                    <button class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-gray-800 transition cursor-not-allowed">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-red-600">
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-orange-500">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <div>
-                <h3 class="text-2xl font-extrabold tracking-wide mb-4 text-red-500">Platespicy.</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Your ultimate destination for authentic, mouth-watering American recipes. Bring the classic diner experience home.</p>
+                <h3 class="text-3xl font-extrabold tracking-wide mb-4 text-red-500">Platespicy<span class="text-orange-500">.</span></h3>
+                <p class="text-gray-400 text-sm leading-relaxed pr-6">Your ultimate destination for authentic, mouth-watering American recipes. Bring the classic diner experience home.</p>
             </div>
             <div>
-                <h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Explore</h3>
-                <ul class="space-y-2 text-sm text-gray-400">
+                <h3 class="font-bold uppercase tracking-wider mb-6 text-gray-200">Explore</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
                     <li><a href="index.html" class="hover:text-red-400 transition">Home</a></li>
                     <li><a href="recipes.html" class="hover:text-red-400 transition">All Recipes</a></li>
                     <li><a href="about.html" class="hover:text-red-400 transition">About Us</a></li>
@@ -95,8 +171,8 @@
                 </ul>
             </div>
             <div>
-                <h3 class="font-bold uppercase tracking-wider mb-4 text-gray-200">Legal</h3>
-                <ul class="space-y-2 text-sm text-gray-400">
+                <h3 class="font-bold uppercase tracking-wider mb-6 text-gray-200">Legal</h3>
+                <ul class="space-y-3 text-sm text-gray-400">
                     <li><a href="privacy.html" class="hover:text-red-400 transition">Privacy Policy</a></li>
                     <li><a href="terms.html" class="hover:text-red-400 transition">Terms of Service</a></li>
                 </ul>
